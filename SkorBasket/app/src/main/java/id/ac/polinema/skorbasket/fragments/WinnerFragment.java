@@ -84,5 +84,13 @@ public class WinnerFragment extends Fragment {
 				}
 			}
 		});
+
+		btnReset.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				sharedScore.setScoreVisitor(0);
+				sharedScore.setScoreHome(0);
+			}
+		});
 	}
 }
