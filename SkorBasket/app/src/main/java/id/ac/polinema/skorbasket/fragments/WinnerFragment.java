@@ -37,7 +37,7 @@ public class WinnerFragment extends Fragment {
 	@Override
 	public void onCreate(@Nullable Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		sharedScore = ViewModelProviders.of(requireActivity()).get(sharedScore.getClass());
+		sharedScore = ViewModelProviders.of(requireActivity()).get(SharedScore.class);
 	}
 
 	@Override

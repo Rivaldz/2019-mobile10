@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 
@@ -57,6 +58,13 @@ public class VisitorFragment extends Fragment {
 
 
 		// Tambahkan logic tombol di bagian bawah ini
+		sharedScore.getScoreVisitor().observe(requireActivity(), new Observer<Integer>() {
+			@Override
+			public void onChanged(Integer score) {
+				scoreVisitor.setText(String.valueOf(score));
+				scoreDefault = score;
+			}
+		});
 		scoreDuaVisitor.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
